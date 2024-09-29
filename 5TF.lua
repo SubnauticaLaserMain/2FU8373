@@ -544,10 +544,39 @@ if game.PlaceId == 13864661000 then
 						end
 					end
 				end
+
+
+				for i, v in ipairs(game:GetService("Players").LocalPlayer.Character:GetChildren()) do
+					local texture = textures['BreakIn2'][v.Name]
+
+					if texture and v.ClassName == 'Tool' then
+						local meshPart = v:FindFirstChildOfClass('MeshPart')
+						local ItemsInside 
+
+						
+						if meshPart then
+							return
+						end
+
+						local spesialMesh = v:WaitForChild('Handle'):FindFirstChildOfClass('SpecialMesh')
+
+
+						for a, b in texture do
+							print(a, b)
+						end
+
+						if spesialMesh then
+							spesialMesh.MeshId = texture['Mesh']
+							spesialMesh.TextureId = texture['Texture']
+
+							return
+						end
+					end
+				end
 			end
 		end
 	})
 end
 
 
--- loadstring(game:HttpGet('https://raw.githubusercontent.com/SubnauticaLaserMain/F0823876Y3Y089/refs/heads/main/f.lua', true))()
+-- loadstring(game:HttpGet('https://raw.githubusercontent.com/SubnauticaLaserMain/2FU8373/refs/heads/main/5TF.lua', true))()
